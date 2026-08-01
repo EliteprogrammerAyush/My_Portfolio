@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skills Power-Up Inventory - Ayush Soni</title>
+  
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="pacman.css">
+</head>
+<body>
+
+  <!-- Arcade Top Status HUD -->
+  <header class="arcade-hud">
+    <div class="hud-item">
+      <span class="hud-label">1UP</span>
+      <span class="hud-val">AYUSH</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">HIGH SCORE</span>
+      <span class="hud-score">999990</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">STAGE</span>
+      <span class="hud-val">03 - SKILLS</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">LIVES</span>
+      <div class="hud-lives">
+        <div class="pac-life"></div>
+        <div class="pac-life"></div>
+        <div class="pac-life"></div>
+      </div>
+    </div>
+    <button id="sound-toggle" class="sound-toggle-btn">🔊 SOUND: ON</button>
+  </header>
+
+  <!-- Arcade Maze Navigation -->
+  <nav class="nav">
+    <a href="index.html">HOME</a>
+    <a href="projects.html">PROJECTS</a>
+    <a href="skills.html" class="active">SKILLS</a>
+    <a href="certificates.html">CERTIFICATES</a>
+    <a href="AboutMe.html">ABOUT ME</a>
+  </nav>
+
+  <div class="container">
+    <div class="arcade-card">
+      <h1>POWER-UP INVENTORY: SKILLS</h1>
+      <p style="color: var(--ghost-cyan); font-family: var(--font-arcade); font-size: 0.75rem; margin-bottom: 20px;">
+        ✦ PLAYER ABILITIES & TECHNICAL POWER METERS ✦
+      </p>
+
+      <div class="skills-grid">
+        <!-- Skill 1 -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-title">C PROGRAMMING</span>
+            <span style="font-family: var(--font-arcade); font-size: 0.65rem; color: var(--pacman-yellow);">LVL 85%</span>
+          </div>
+          <div class="skill-level-bar">
+            <div class="skill-level-fill" style="width: 85%;"></div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">Core Data Structures, Pointers, Memory Management</p>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-title">C++</span>
+            <span style="font-family: var(--font-arcade); font-size: 0.65rem; color: var(--ghost-cyan);">LVL 88%</span>
+          </div>
+          <div class="skill-level-bar">
+            <div class="skill-level-fill" style="width: 88%;"></div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">OOP Concepts, STL, Algorithm Optimization</p>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-title">PYTHON</span>
+            <span style="font-family: var(--font-arcade); font-size: 0.65rem; color: var(--ghost-pink);">LVL 82%</span>
+          </div>
+          <div class="skill-level-bar">
+            <div class="skill-level-fill" style="width: 82%;"></div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">Streamlit, Data Parsing, PyMuPDF, Automation</p>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-title">HTML & CSS</span>
+            <span style="font-family: var(--font-arcade); font-size: 0.65rem; color: var(--ghost-orange);">LVL 90%</span>
+          </div>
+          <div class="skill-level-bar">
+            <div class="skill-level-fill" style="width: 90%;"></div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">Retro UI Layouts, Flexbox/Grid, CSS Animations</p>
+        </div>
+
+        <!-- Skill 5 -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-title">CANVA & DESIGN</span>
+            <span style="font-family: var(--font-arcade); font-size: 0.65rem; color: var(--pacman-yellow);">LVL 85%</span>
+          </div>
+          <div class="skill-level-bar">
+            <div class="skill-level-fill" style="width: 85%;"></div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">Visual Storytelling, Presentation & Asset Design</p>
+        </div>
+
+        <!-- Skill 6 -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-title">EMBEDDED SYSTEMS</span>
+            <span style="font-family: var(--font-arcade); font-size: 0.65rem; color: var(--ghost-cyan);">LVL 78%</span>
+          </div>
+          <div class="skill-level-bar">
+            <div class="skill-level-fill" style="width: 78%;"></div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">Hardware-Software Interfacing, Microcontrollers</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 30px; text-align: center;">
+        <a href="index.html" class="btn-arcade">← BACK TO START</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 AYUSH SONI • PAC-MAN PORTFOLIO EDITION</p>
+    </footer>
+  </div>
+
+  <script src="pacman-audio.js"></script>
+</body>
+</html>

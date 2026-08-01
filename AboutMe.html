@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Player Profile - Ayush Soni</title>
+  
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="pacman.css">
+</head>
+<body>
+
+  <!-- Arcade Top Status HUD -->
+  <header class="arcade-hud">
+    <div class="hud-item">
+      <span class="hud-label">1UP</span>
+      <span class="hud-val">AYUSH</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">HIGH SCORE</span>
+      <span class="hud-score">999990</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">STAGE</span>
+      <span class="hud-val">05 - PLAYER DOSSIER</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">LIVES</span>
+      <div class="hud-lives">
+        <div class="pac-life"></div>
+        <div class="pac-life"></div>
+        <div class="pac-life"></div>
+      </div>
+    </div>
+    <button id="sound-toggle" class="sound-toggle-btn">🔊 SOUND: ON</button>
+  </header>
+
+  <!-- Arcade Maze Navigation -->
+  <nav class="nav">
+    <a href="index.html">HOME</a>
+    <a href="projects.html">PROJECTS</a>
+    <a href="skills.html">SKILLS</a>
+    <a href="certificates.html">CERTIFICATES</a>
+    <a href="AboutMe.html" class="active">ABOUT ME</a>
+  </nav>
+
+  <div class="container">
+    <div class="arcade-card">
+      <div style="text-align: center; margin-bottom: 25px;">
+        <h1>PLAYER 1: CHARACTER DOSSIER</h1>
+        <p style="color: var(--ghost-cyan); font-family: var(--font-arcade); font-size: 0.75rem;">
+          ✦ ACADEMIC HISTORY & PLAYER JOURNEY ✦
+        </p>
+        <p style="color: var(--text-muted); max-width: 700px; margin: 12px auto 0 auto; font-size: 1rem;">
+          I am Ayush Soni, a passionate software developer and tech explorer specializing in Computer Science and Internet of Things (CS-IoT).
+        </p>
+      </div>
+
+      <h2 style="font-size: 0.95rem; margin-bottom: 15px; border-bottom: 1px dashed var(--maze-blue); padding-bottom: 8px;">
+        🎓 ACADEMIC STAGE STATS
+      </h2>
+
+      <div class="grid">
+        <!-- Academic Level 1 -->
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span style="font-family: var(--font-arcade); font-size: 0.7rem; color: var(--ghost-pink);">LEVEL 10</span>
+            <span style="font-family: var(--font-arcade); font-size: 0.65rem; color: var(--pacman-yellow);">YEAR: 2022</span>
+          </div>
+          <h3 style="font-family: var(--font-arcade); font-size: 0.85rem; color: var(--pacman-yellow);">10th (Secondary)</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 6px 0;">
+            School: <strong style="color: var(--text-main);">Alpha International Academy</strong>
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 6px 0;">
+            Score: <strong style="color: var(--text-cyan);">70%</strong>
+          </p>
+          <div style="margin-top: 10px; font-family: var(--font-arcade); font-size: 0.6rem; color: var(--ghost-cyan);">
+            STATUS: CLEARED ✓
+          </div>
+        </div>
+
+        <!-- Academic Level 2 -->
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span style="font-family: var(--font-arcade); font-size: 0.7rem; color: var(--ghost-cyan);">LEVEL 12</span>
+            <span style="font-family: var(--font-arcade); font-size: 0.65rem; color: var(--pacman-yellow);">YEAR: 2024</span>
+          </div>
+          <h3 style="font-family: var(--font-arcade); font-size: 0.85rem; color: var(--pacman-yellow);">12th (Senior Secondary)</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 6px 0;">
+            School: <strong style="color: var(--text-main);">Archana Children's Academy</strong>
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 6px 0;">
+            Score: <strong style="color: var(--pacman-yellow);">84.60%</strong>
+          </p>
+          <div style="margin-top: 10px; font-family: var(--font-arcade); font-size: 0.6rem; color: var(--pacman-yellow);">
+            STATUS: HIGH SCORE ✓
+          </div>
+        </div>
+
+        <!-- Academic Level 3 -->
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span style="font-family: var(--font-arcade); font-size: 0.7rem; color: var(--ghost-orange);">LEVEL CURRENT</span>
+            <span style="font-family: var(--font-arcade); font-size: 0.65rem; color: var(--pacman-yellow);">2ND YEAR</span>
+          </div>
+          <h3 style="font-family: var(--font-arcade); font-size: 0.85rem; color: var(--pacman-yellow);">Undergraduate B.Tech</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 6px 0;">
+            College: <strong style="color: var(--text-main);">Poornima Institute of Engineering and Technology</strong>
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 6px 0;">
+            Branch: <strong style="color: var(--ghost-pink);">CS-IoT (Computer Science & IoT)</strong>
+          </p>
+          <div style="margin-top: 10px; font-family: var(--font-arcade); font-size: 0.6rem; color: var(--ghost-orange);">
+            STATUS: IN PROGRESS ▶
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 30px; text-align: center;">
+        <a href="index.html" class="btn-arcade">← BACK TO START</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 AYUSH SONI • PAC-MAN PORTFOLIO EDITION</p>
+    </footer>
+  </div>
+
+  <script src="pacman-audio.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects Stage - Ayush Soni</title>
+  
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="pacman.css">
+</head>
+<body>
+
+  <!-- Arcade Top Status HUD -->
+  <header class="arcade-hud">
+    <div class="hud-item">
+      <span class="hud-label">1UP</span>
+      <span class="hud-val">AYUSH</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">HIGH SCORE</span>
+      <span class="hud-score">999990</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">STAGE</span>
+      <span class="hud-val">02 - PROJECTS</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">LIVES</span>
+      <div class="hud-lives">
+        <div class="pac-life"></div>
+        <div class="pac-life"></div>
+        <div class="pac-life"></div>
+      </div>
+    </div>
+    <button id="sound-toggle" class="sound-toggle-btn">🔊 SOUND: ON</button>
+  </header>
+
+  <!-- Arcade Maze Navigation -->
+  <nav class="nav">
+    <a href="index.html">HOME</a>
+    <a href="projects.html" class="active">PROJECTS</a>
+    <a href="skills.html">SKILLS</a>
+    <a href="certificates.html">CERTIFICATES</a>
+    <a href="AboutMe.html">ABOUT ME</a>
+  </nav>
+
+  <div class="container">
+    <div class="arcade-card">
+      <h1>STAGE SELECT: PROJECTS</h1>
+      <p style="color: var(--ghost-cyan); font-family: var(--font-arcade); font-size: 0.75rem; margin-bottom: 20px;">
+        ✦ SELECT A STAGE TO INSPECT CODE & ARCHITECTURE ✦
+      </p>
+
+      <div class="grid">
+        <!-- Stage 1 -->
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-family: var(--font-arcade); font-size: 0.7rem; color: var(--ghost-pink);">STAGE 01</span>
+            <span style="font-family: var(--font-arcade); font-size: 0.65rem; color: var(--pacman-yellow);">SCORE: +5000</span>
+          </div>
+          <img src="Images/ATS Resume Project .jpg" alt="ATS Resume Parser">
+          <h3 style="font-family: var(--font-arcade); font-size: 0.85rem; color: var(--pacman-yellow); margin-top: 12px;">
+            ATS Resume Parser & Visualizer
+          </h3>
+          <div class="chips">
+            <span class="chip-tag">Python</span>
+            <span class="chip-tag">PyMuPDF</span>
+            <span class="chip-tag">Streamlit</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 10px; flex-grow: 1;">
+            A web-based ATS (Applicant Tracking System) resume parser and visualizer built using Python and Streamlit. Extracts and analyzes text from PDF resumes for quick review.
+          </p>
+        </div>
+
+        <!-- Stage 2 -->
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-family: var(--font-arcade); font-size: 0.7rem; color: var(--ghost-cyan);">STAGE 02</span>
+            <span style="font-family: var(--font-arcade); font-size: 0.65rem; color: var(--pacman-yellow);">SCORE: +3500</span>
+          </div>
+          <img src="Images/Vastra.jpg" alt="E-Commerce Webpage">
+          <h3 style="font-family: var(--font-arcade); font-size: 0.85rem; color: var(--pacman-yellow); margin-top: 12px;">
+            E-Commerce Webpage
+          </h3>
+          <div class="chips">
+            <span class="chip-tag">HTML</span>
+            <span class="chip-tag">CSS</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 10px; flex-grow: 1;">
+            First front-end web project created using HTML and CSS, showcasing product catalog layouts and styling logic.
+          </p>
+          <div style="margin-top: 12px;">
+            <a href="https://github.com/EliteprogrammerAyush/RASTE-KA-MAAL-SASTE-ME" target="_blank" class="btn-arcade" style="font-size: 0.65rem; padding: 6px 12px;">
+              🔗 GITHUB REPO
+            </a>
+          </div>
+        </div>
+
+        <!-- Stage 3 -->
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-family: var(--font-arcade); font-size: 0.7rem; color: var(--ghost-orange);">STAGE 03</span>
+            <span style="font-family: var(--font-arcade); font-size: 0.65rem; color: var(--pacman-yellow);">SCORE: +4000</span>
+          </div>
+          <img src="Images/Hotel_Management.jpg" alt="Hotel Management Screenshot">
+          <h3 style="font-family: var(--font-arcade); font-size: 0.85rem; color: var(--pacman-yellow); margin-top: 12px;">
+            Hotel Management & Food Ordering System
+          </h3>
+          <div class="chips">
+            <span class="chip-tag">C++</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 10px; flex-grow: 1;">
+            A console-based C++ application designed to manage room bookings and food ordering workflows efficiently.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top: 30px; text-align: center;">
+        <a href="index.html" class="btn-arcade">← BACK TO START</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 AYUSH SONI • PAC-MAN PORTFOLIO EDITION</p>
+    </footer>
+  </div>
+
+  <script src="pacman-audio.js"></script>
+</body>
+</html>

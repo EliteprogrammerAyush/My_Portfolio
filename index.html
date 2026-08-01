@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ayush Soni - Arcade Portfolio</title>
+  
+  <!-- FontAwesome & Theme Stylesheets -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="pacman.css">
+</head>
+<body>
+
+  <!-- Arcade Top Status HUD -->
+  <header class="arcade-hud">
+    <div class="hud-item">
+      <span class="hud-label">1UP</span>
+      <span class="hud-val">AYUSH</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">HIGH SCORE</span>
+      <span class="hud-score">999990</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">STAGE</span>
+      <span class="hud-val">01</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">LIVES</span>
+      <div class="hud-lives">
+        <div class="pac-life"></div>
+        <div class="pac-life"></div>
+        <div class="pac-life"></div>
+      </div>
+    </div>
+    <button id="sound-toggle" class="sound-toggle-btn">🔊 SOUND: ON</button>
+  </header>
+
+  <!-- Arcade Maze Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="active">HOME</a>
+    <a href="projects.html">PROJECTS</a>
+    <a href="skills.html">SKILLS</a>
+    <a href="certificates.html">CERTIFICATES</a>
+    <a href="AboutMe.html">ABOUT ME</a>
+  </nav>
+
+  <div class="container">
+    <!-- Main Hero Arcade Card -->
+    <main class="arcade-card">
+      <section class="hero">
+        <div class="photo-wrapper">
+          <div class="photo">
+            <img src="Images/My photu.jpg" alt="Ayush Soni Photo">
+          </div>
+        </div>
+        <div>
+          <div style="font-family: var(--font-arcade); font-size: 0.75rem; color: var(--ghost-cyan); margin-bottom: 8px;">
+            ✦ INSERT COIN TO CONTINUE ✦
+          </div>
+          <h1>HI, I'M <strong>AYUSH SONI</strong></h1>
+          <p class="lead">Programming Enthusiast (C, C++, Python) • Computer Science Student • Tech Explorer</p>
+          <p style="color: var(--text-muted); font-size: 1rem;">
+            I build projects that seamlessly connect hardware and software. Explore my arcade maze stages to view my projects, skills, and academic profile!
+          </p>
+          
+          <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="projects.html" class="btn-arcade">🎮 VIEW PROJECTS</a>
+            <button id="open-game-btn" class="btn-arcade" style="border-color: var(--ghost-cyan); color: var(--ghost-cyan);">🕹️ PLAY PAC-MAN ARCADE</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Animated Pac-Man Munching Track -->
+      <div class="pacman-track">
+        <div class="chomper"></div>
+        <div class="chasing-ghost">
+          <svg viewBox="0 0 24 24" fill="var(--ghost-red)">
+            <path d="M12 2C7.58 2 4 5.58 4 10v12l4-2 4 2 4-2 4 2V10c0-4.42-3.58-8-8-8zm-3 8c-.83 0-1.5-.67-1.5-1.5S8.17 7 9 7s1.5.67 1.5 1.5S9.83 10 9 10zm6 0c-.83 0-1.5-.67-1.5-1.5S14.17 7 15 7s1.5.67 1.5 1.5S15.83 10 15 10z"/>
+          </svg>
+        </div>
+        <div class="dots-line">
+          <div class="dot"></div>
+          <div class="power-pellet"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="power-pellet"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="power-pellet"></div>
+        </div>
+      </div>
+
+      <!-- Social Links as Fruit / Item Pickups -->
+      <section style="margin-top: 30px;">
+        <h2 style="text-align: center; font-size: 1rem;">✦ PLAYER CONNECT & POWER-UPS ✦</h2>
+        <div class="social-arcade">
+          <a href="https://www.linkedin.com/in/ayush-soni-5652b4328/" target="_blank" class="social-card">
+            <img src="Images/Linkedin.jpg" alt="LinkedIn">
+            <span class="social-name">LINKEDIN</span>
+          </a>
+          <a href="https://github.com/EliteprogrammerAyush" target="_blank" class="social-card">
+            <img src="Images/Github.jpg" alt="GitHub">
+            <span class="social-name">GITHUB</span>
+          </a>
+          <a href="https://leetcode.com/u/Eliteprogrammer_ayush/" target="_blank" class="social-card">
+            <img src="Images/Leet.jpeg" alt="LeetCode">
+            <span class="social-name">LEETCODE</span>
+          </a>
+          <a href="https://www.hackerrank.com/profile/ayush100ni2211" target="_blank" class="social-card">
+            <img src="Images/Hack.jpeg" alt="HackerRank">
+            <span class="social-name">HACKERRANK</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 AYUSH SONI • PAC-MAN PORTFOLIO EDITION</p>
+      <p>PRESS START TO DISCOVER MORE</p>
+    </footer>
+  </div>
+
+  <!-- Playable Pac-Man Canvas Modal -->
+  <div id="game-modal" class="modal-overlay">
+    <div class="modal-box">
+      <button id="close-game-btn" class="modal-close">✖</button>
+      <h2 style="margin-bottom: 4px; font-size: 1rem;">PAC-MAN ARCADE MINI</h2>
+      <p style="color: var(--pacman-yellow); font-family: var(--font-arcade); font-size: 0.65rem;">
+        SCORE: <span id="mini-score">0</span> | USE ARROW / WASD KEYS
+      </p>
+      <canvas id="pacman-canvas" width="400" height="280"></canvas>
+      <p style="color: var(--text-muted); font-size: 0.8rem;">Chomp all dots while dodging Blinky!</p>
+    </div>
+  </div>
+
+  <script src="pacman-audio.js"></script>
+</body>
+</html>
