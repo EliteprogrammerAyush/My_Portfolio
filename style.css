@@ -1,64 +1,68 @@
 /* ==========================================================================
-   Modern Portfolio Design System - Ayush Soni
+   VALORANT Tactical UI Design System - Ayush Soni Portfolio
    ========================================================================== */
 
 :root {
-  /* Color Palette - Dark Mode (Default) */
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --bg-card: rgba(30, 41, 59, 0.7);
-  --bg-card-hover: #334155;
-  --bg-glass: rgba(15, 23, 42, 0.85);
+  /* Color Palette - Valorant Tactical Dark Mode (Default) */
+  --bg-primary: #0f1923;       /* Valorant Gunmetal Black */
+  --bg-secondary: #172533;     /* Valorant Dark Slate */
+  --bg-card: rgba(23, 37, 51, 0.85);
+  --bg-card-hover: rgba(27, 43, 60, 0.95);
+  --bg-glass: rgba(15, 25, 35, 0.92);
   
-  --text-main: #f8fafc;
+  --text-main: #ece8e1;         /* Valorant Signature Off-White */
   --text-muted: #94a3b8;
   --text-subtle: #64748b;
   
-  --accent-primary: #38bdf8;   /* Cyan */
-  --accent-secondary: #818cf8; /* Indigo */
-  --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-  --accent-glow: rgba(56, 189, 248, 0.25);
+  --accent-primary: #ff4655;   /* Valorant Signature Crimson Red */
+  --accent-secondary: #00f0ff; /* Radiance Cyan */
+  --accent-gold: #ffce00;      /* Tactical Gold */
+  --accent-gradient: linear-gradient(135deg, #ff4655 0%, #ff7985 100%);
+  --accent-glow: rgba(255, 70, 85, 0.3);
   
-  --border-color: rgba(255, 255, 255, 0.1);
-  --border-hover: rgba(56, 189, 248, 0.4);
+  --border-color: rgba(255, 70, 85, 0.25);
+  --border-hover: #ff4655;
   
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
   --radius-full: 9999px;
   
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 30px rgba(56, 189, 248, 0.15);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 30px rgba(255, 70, 85, 0.35);
   
-  --font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+  --font-tactical: 'Rajdhani', 'Oswald', sans-serif;
+  
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Light Theme Variables */
+/* Light Theme Variables (Valorant Protocol Light Mode) */
 [data-theme="light"] {
-  --bg-primary: #f8fafc;
-  --bg-secondary: #ffffff;
-  --bg-card: rgba(255, 255, 255, 0.8);
-  --bg-card-hover: #f1f5f9;
-  --bg-glass: rgba(248, 250, 252, 0.85);
+  --bg-primary: #ece8e1;       /* Valorant Off-White Base */
+  --bg-secondary: #ffffff;     /* Clean White */
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card-hover: #f4f1eb;
+  --bg-glass: rgba(236, 232, 225, 0.92);
   
-  --text-main: #0f172a;
+  --text-main: #0f1923;        /* Valorant Dark Slate Text */
   --text-muted: #475569;
   --text-subtle: #64748b;
   
-  --accent-primary: #0284c7;
-  --accent-secondary: #4f46e5;
-  --accent-gradient: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
-  --accent-glow: rgba(2, 132, 199, 0.15);
+  --accent-primary: #ff4655;
+  --accent-secondary: #0284c7;
+  --accent-gold: #d97706;
+  --accent-gradient: linear-gradient(135deg, #ff4655 0%, #dc2626 100%);
+  --accent-glow: rgba(255, 70, 85, 0.2);
   
-  --border-color: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(2, 132, 199, 0.4);
+  --border-color: rgba(15, 25, 35, 0.15);
+  --border-hover: #ff4655;
   
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-glow: 0 0 30px rgba(2, 132, 199, 0.1);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 30px rgba(255, 70, 85, 0.2);
 }
 
 /* Global Resets & Base Styling */
@@ -80,6 +84,11 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   transition: background-color var(--transition-normal), color var(--transition-normal);
+  /* Tactical Grid Overlay */
+  background-image: 
+    linear-gradient(to right, rgba(255, 70, 85, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 70, 85, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 a {
@@ -108,32 +117,38 @@ button {
 }
 
 .section {
-  padding: 90px 0;
+  padding: 95px 0;
+  position: relative;
 }
 
 .section-title-wrapper {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 54px;
 }
 
 .section-tag {
   display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-family: var(--font-tactical);
+  font-size: 0.95rem;
+  font-weight: 700;
   color: var(--accent-primary);
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  padding: 6px 14px;
-  background: var(--accent-glow);
-  border-radius: var(--radius-full);
-  margin-bottom: 12px;
+  letter-spacing: 2px;
+  padding: 6px 16px;
+  background: rgba(255, 70, 85, 0.12);
+  border-left: 3px solid var(--accent-primary);
+  border-right: 1px solid var(--border-color);
+  margin-bottom: 14px;
+  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
 }
 
 .section-title {
-  font-size: 2.25rem;
+  font-family: var(--font-tactical);
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--text-main);
-  letter-spacing: -0.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .section-subtitle {
@@ -144,7 +159,7 @@ button {
 }
 
 /* ==========================================================================
-   Header & Navbar
+   Header & Tactical Navbar
    ========================================================================== */
 .header {
   position: fixed;
@@ -155,7 +170,7 @@ button {
   background: var(--bg-glass);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--accent-primary);
   transition: var(--transition-normal);
 }
 
@@ -167,18 +182,30 @@ button {
 }
 
 .logo {
-  font-size: 1.35rem;
+  font-family: var(--font-tactical);
+  font-size: 1.5rem;
   font-weight: 800;
   color: var(--text-main);
   display: flex;
   align-items: center;
   gap: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.logo i {
+  color: var(--accent-primary);
+  filter: drop-shadow(0 0 8px rgba(255, 70, 85, 0.7));
 }
 
 .logo span {
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-main);
+  transition: var(--transition-fast);
+}
+
+.logo:hover span {
+  color: var(--accent-primary);
+  text-shadow: 0 0 10px rgba(255, 70, 85, 0.6);
 }
 
 .nav-links {
@@ -189,9 +216,12 @@ button {
 }
 
 .nav-link {
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-family: var(--font-tactical);
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
   transition: var(--transition-fast);
   position: relative;
   padding: 6px 0;
@@ -199,6 +229,7 @@ button {
 
 .nav-link:hover, .nav-link.active {
   color: var(--accent-primary);
+  text-shadow: 0 0 10px rgba(255, 70, 85, 0.5);
 }
 
 .nav-link::after {
@@ -208,9 +239,9 @@ button {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent-gradient);
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px var(--accent-primary);
   transition: var(--transition-fast);
-  border-radius: 2px;
 }
 
 .nav-link:hover::after, .nav-link.active::after {
@@ -224,39 +255,53 @@ button {
 }
 
 .theme-toggle-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-full);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  color: var(--text-main);
+  color: var(--accent-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   transition: var(--transition-fast);
+  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
 }
 
 .theme-toggle-btn:hover {
   border-color: var(--accent-primary);
-  color: var(--accent-primary);
+  background: rgba(255, 70, 85, 0.15);
+  box-shadow: 0 0 15px rgba(255, 70, 85, 0.4);
 }
 
 .mobile-menu-btn {
   display: none;
   font-size: 1.4rem;
-  color: var(--text-main);
+  color: var(--accent-primary);
   padding: 8px;
 }
 
 /* ==========================================================================
-   Hero Section
+   Hero Section - Valorant HUD & Agent Style
    ========================================================================== */
 .hero-section {
-  padding-top: 140px;
-  padding-bottom: 80px;
+  padding-top: 150px;
+  padding-bottom: 90px;
   position: relative;
   overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 70, 85, 0.12) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .hero-content {
@@ -269,55 +314,65 @@ button {
 .hero-text {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
 }
 
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-full);
-  font-size: 0.88rem;
-  font-weight: 500;
+  gap: 10px;
+  padding: 8px 18px;
+  background: rgba(255, 70, 85, 0.1);
+  border: 1px solid var(--accent-primary);
   color: var(--accent-primary);
+  font-family: var(--font-tactical);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   width: fit-content;
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+  box-shadow: 0 0 15px rgba(255, 70, 85, 0.2);
 }
 
 .pulse-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #10b981;
+  width: 9px;
+  height: 9px;
+  background-color: var(--accent-primary);
   border-radius: 50%;
-  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  box-shadow: 0 0 0 0 rgba(255, 70, 85, 0.8);
   animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 70, 85, 0.8); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 70, 85, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 70, 85, 0); }
 }
 
 .hero-name {
-  font-size: 3.25rem;
+  font-family: var(--font-tactical);
+  font-size: 4rem;
   font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -1px;
+  line-height: 1.1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .hero-name span {
+  color: var(--accent-primary);
+  text-shadow: 0 0 20px rgba(255, 70, 85, 0.5);
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--accent-primary);
+  font-family: var(--font-tactical);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 1px;
 }
 
 .hero-description {
@@ -329,7 +384,7 @@ button {
 .hero-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
   flex-wrap: wrap;
   margin-top: 10px;
 }
@@ -339,37 +394,45 @@ button {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 12px 26px;
-  border-radius: var(--radius-md);
-  font-size: 0.95rem;
-  font-weight: 600;
+  padding: 14px 28px;
+  font-family: var(--font-tactical);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   transition: var(--transition-normal);
   text-decoration: none;
+  position: relative;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
 }
 
 .btn-primary {
-  background: var(--accent-gradient);
+  background: var(--accent-primary);
   color: #ffffff;
-  box-shadow: 0 4px 16px var(--accent-glow);
+  box-shadow: 0 0 20px rgba(255, 70, 85, 0.5);
+  border: 1px solid var(--accent-primary);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.4);
+  background: #e03544;
+  box-shadow: 0 0 30px rgba(255, 70, 85, 0.8);
+  transform: translateY(-3px);
 }
 
 .btn-outline {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  background: rgba(23, 37, 51, 0.6);
+  border: 1px solid var(--accent-primary);
   color: var(--text-main);
 }
 
 .btn-outline:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-  transform: translateY(-2px);
+  background: var(--accent-primary);
+  color: #ffffff;
+  box-shadow: 0 0 25px rgba(255, 70, 85, 0.6);
+  transform: translateY(-3px);
 }
 
+/* Tactical Hero Agent Card Container */
 .hero-image-wrapper {
   position: relative;
   display: flex;
@@ -379,26 +442,26 @@ button {
 
 .hero-image-container {
   position: relative;
-  width: 280px;
-  height: 280px;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
-  border: 3px solid var(--accent-primary);
+  background: var(--bg-secondary);
+  border: 2px solid var(--accent-primary);
   box-shadow: var(--shadow-glow);
   transition: var(--transition-normal);
-  animation: morph 8s ease-in-out infinite;
+  clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
 }
 
-@keyframes morph {
-  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-  50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
-  100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+.hero-image-container:hover {
+  box-shadow: 0 0 40px rgba(255, 70, 85, 0.6);
+  transform: scale(1.02);
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: contrast(1.05) brightness(1.02);
 }
 
 /* Quick Social Bar */
@@ -410,23 +473,24 @@ button {
 }
 
 .social-icon-btn {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-md);
+  width: 44px;
+  height: 44px;
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   color: var(--text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   transition: var(--transition-fast);
+  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
 }
 
 .social-icon-btn:hover {
-  background: var(--bg-card-hover);
+  background: rgba(255, 70, 85, 0.15);
   color: var(--accent-primary);
   border-color: var(--accent-primary);
+  box-shadow: 0 0 15px rgba(255, 70, 85, 0.5);
   transform: translateY(-3px);
 }
 
@@ -434,17 +498,17 @@ button {
    About & Stats Section
    ========================================================================== */
 .about-card {
-  background: var(--bg-secondary);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 40px;
+  padding: 42px;
   box-shadow: var(--shadow-md);
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 36px;
 }
 
 .about-text p {
@@ -457,20 +521,21 @@ button {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 10px;
+  gap: 14px;
+  margin-top: 14px;
 }
 
 .highlights-list li {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.98rem;
+  gap: 12px;
+  font-size: 1rem;
   color: var(--text-main);
 }
 
 .highlights-list i {
   color: var(--accent-primary);
+  filter: drop-shadow(0 0 6px rgba(255, 70, 85, 0.5));
 }
 
 /* Stats Counter Grid */
@@ -483,21 +548,24 @@ button {
 .stat-item {
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
   padding: 24px;
   text-align: center;
   transition: var(--transition-fast);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
 }
 
 .stat-item:hover {
   border-color: var(--accent-primary);
+  box-shadow: 0 0 20px rgba(255, 70, 85, 0.35);
   transform: translateY(-4px);
 }
 
 .stat-number {
-  font-size: 2rem;
+  font-family: var(--font-tactical);
+  font-size: 2.3rem;
   font-weight: 800;
   color: var(--accent-primary);
+  text-shadow: 0 0 10px rgba(255, 70, 85, 0.4);
   margin-bottom: 4px;
 }
 
@@ -512,7 +580,7 @@ button {
    ========================================================================== */
 .timeline {
   position: relative;
-  max-width: 800px;
+  max-width: 840px;
   margin: 0 auto;
 }
 
@@ -523,15 +591,16 @@ button {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: var(--border-color);
+  background: var(--accent-primary);
+  box-shadow: 0 0 10px var(--accent-primary);
   transform: translateX(-50%);
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 44px;
   width: 50%;
-  padding: 0 30px;
+  padding: 0 34px;
 }
 
 .timeline-item:nth-child(odd) {
@@ -549,10 +618,10 @@ button {
   top: 20px;
   width: 16px;
   height: 16px;
-  border-radius: 50%;
   background: var(--accent-primary);
-  box-shadow: 0 0 0 4px var(--bg-primary), 0 0 12px var(--accent-primary);
+  box-shadow: 0 0 0 4px var(--bg-primary), 0 0 15px var(--accent-primary);
   z-index: 2;
+  transform: rotate(45deg);
 }
 
 .timeline-item:nth-child(odd) .timeline-dot {
@@ -564,77 +633,84 @@ button {
 }
 
 .timeline-card {
-  background: var(--bg-secondary);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 24px;
+  padding: 26px;
   box-shadow: var(--shadow-sm);
   transition: var(--transition-fast);
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
 }
 
 .timeline-card:hover {
   border-color: var(--accent-primary);
+  box-shadow: 0 0 25px rgba(255, 70, 85, 0.4);
   transform: translateY(-4px);
 }
 
 .timeline-year {
   display: inline-block;
-  font-size: 0.8rem;
+  font-family: var(--font-tactical);
+  font-size: 0.85rem;
   font-weight: 700;
+  letter-spacing: 1.5px;
   color: var(--accent-primary);
-  background: var(--accent-glow);
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
-  margin-bottom: 10px;
+  background: rgba(255, 70, 85, 0.15);
+  padding: 4px 12px;
+  border-left: 2px solid var(--accent-primary);
+  margin-bottom: 12px;
 }
 
 .timeline-title {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-family: var(--font-tactical);
+  font-size: 1.3rem;
+  font-weight: 800;
   color: var(--text-main);
+  letter-spacing: 1px;
   margin-bottom: 6px;
 }
 
 .timeline-institution {
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   color: var(--text-muted);
   margin-bottom: 8px;
 }
 
 .timeline-score {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #10b981;
+  font-family: var(--font-tactical);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-secondary);
+  letter-spacing: 1px;
 }
 
 /* ==========================================================================
-   Skills Grid Section
+   Skills Grid Section - Tactical Arsenal
    ========================================================================== */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
+  gap: 26px;
 }
 
 .skill-card {
-  background: var(--bg-secondary);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 24px;
+  padding: 26px;
   transition: var(--transition-normal);
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
 }
 
 .skill-card:hover {
-  border-color: var(--border-hover);
+  border-color: var(--accent-primary);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 0 25px rgba(255, 70, 85, 0.35);
 }
 
 .skill-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .skill-title-group {
@@ -644,81 +720,87 @@ button {
 }
 
 .skill-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-sm);
-  background: var(--accent-glow);
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 70, 85, 0.12);
   color: var(--accent-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
+  border: 1px solid rgba(255, 70, 85, 0.3);
+  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
 }
 
 .skill-name {
-  font-size: 1.05rem;
+  font-family: var(--font-tactical);
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-main);
+  letter-spacing: 1px;
 }
 
 .skill-percent {
-  font-size: 0.88rem;
-  font-weight: 700;
+  font-family: var(--font-tactical);
+  font-size: 1.05rem;
+  font-weight: 800;
   color: var(--accent-primary);
+  text-shadow: 0 0 8px rgba(255, 70, 85, 0.4);
 }
 
 .skill-bar-bg {
   width: 100%;
   height: 8px;
   background: var(--bg-primary);
-  border-radius: var(--radius-full);
   overflow: hidden;
   margin-bottom: 12px;
+  border: 1px solid rgba(255, 70, 85, 0.2);
 }
 
 .skill-bar-fill {
   height: 100%;
-  background: var(--accent-gradient);
-  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, #ff4655 0%, #ff8000 100%);
+  box-shadow: 0 0 10px rgba(255, 70, 85, 0.6);
   transition: width 1s ease-in-out;
 }
 
 .skill-desc {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
 }
 
 /* ==========================================================================
-   Projects Section
+   Projects Section - Agent Operations Showcase
    ========================================================================== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 28px;
+  gap: 30px;
 }
 
 .project-card {
-  background: var(--bg-secondary);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: var(--transition-normal);
+  clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
 }
 
 .project-card:hover {
   border-color: var(--accent-primary);
   transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 0 30px rgba(255, 70, 85, 0.4);
 }
 
 .project-img-wrapper {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 210px;
   overflow: hidden;
   background: var(--bg-primary);
+  border-bottom: 2px solid var(--accent-primary);
 }
 
 .project-img {
@@ -729,11 +811,11 @@ button {
 }
 
 .project-card:hover .project-img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .project-body {
-  padding: 24px;
+  padding: 26px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -743,30 +825,34 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .tag {
-  font-size: 0.78rem;
-  font-weight: 600;
+  font-family: var(--font-tactical);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   padding: 4px 10px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-primary);
+  background: rgba(255, 70, 85, 0.12);
   color: var(--accent-primary);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 70, 85, 0.3);
 }
 
 .project-title {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-family: var(--font-tactical);
+  font-size: 1.3rem;
+  font-weight: 800;
   color: var(--text-main);
+  letter-spacing: 1px;
   margin-bottom: 10px;
 }
 
 .project-desc {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   flex-grow: 1;
 }
 
@@ -777,60 +863,63 @@ button {
 }
 
 .project-btn {
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 8px 16px;
-  border-radius: var(--radius-sm);
+  font-family: var(--font-tactical);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 10px 18px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   text-decoration: none;
   transition: var(--transition-fast);
+  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
 }
 
 .project-btn-primary {
-  background: var(--accent-glow);
-  color: var(--accent-primary);
-  border: 1px solid var(--border-hover);
+  background: var(--accent-primary);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 70, 85, 0.4);
 }
 
 .project-btn-primary:hover {
-  background: var(--accent-primary);
-  color: #ffffff;
+  background: #e03544;
+  box-shadow: 0 0 25px rgba(255, 70, 85, 0.7);
 }
 
 /* ==========================================================================
-   Certificates Grid Section
+   Certificates Grid Section - Tactical Badges
    ========================================================================== */
 .certs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
 }
 
 .cert-card {
-  background: var(--bg-secondary);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 16px;
+  padding: 18px;
   transition: var(--transition-normal);
   cursor: pointer;
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
 }
 
 .cert-card:hover {
   border-color: var(--accent-primary);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 0 25px rgba(255, 70, 85, 0.4);
 }
 
 .cert-img-container {
   width: 100%;
-  height: 170px;
-  border-radius: var(--radius-sm);
+  height: 175px;
   overflow: hidden;
   position: relative;
   background: var(--bg-primary);
   margin-bottom: 14px;
+  border: 1px solid rgba(255, 70, 85, 0.2);
 }
 
 .cert-img {
@@ -847,14 +936,15 @@ button {
 .cert-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(15, 25, 35, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  font-size: 1.5rem;
+  color: var(--accent-primary);
+  font-size: 2rem;
   opacity: 0;
   transition: opacity var(--transition-fast);
+  filter: drop-shadow(0 0 10px var(--accent-primary));
 }
 
 .cert-card:hover .cert-overlay {
@@ -862,23 +952,27 @@ button {
 }
 
 .cert-year {
-  font-size: 0.75rem;
+  font-family: var(--font-tactical);
+  font-size: 0.85rem;
   font-weight: 700;
+  letter-spacing: 1px;
   color: var(--accent-primary);
   text-transform: uppercase;
   margin-bottom: 4px;
 }
 
 .cert-title {
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-family: var(--font-tactical);
+  font-size: 1.1rem;
+  font-weight: 800;
   color: var(--text-main);
+  letter-spacing: 0.5px;
   line-height: 1.3;
   margin-bottom: 4px;
 }
 
 .cert-issuer {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
 }
 
@@ -892,13 +986,13 @@ button {
 }
 
 .contact-info-card {
-  background: var(--bg-secondary);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 36px;
+  padding: 38px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 26px;
+  clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
 }
 
 .contact-item {
@@ -908,22 +1002,25 @@ button {
 }
 
 .contact-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: var(--radius-md);
-  background: var(--accent-glow);
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 70, 85, 0.15);
   color: var(--accent-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   flex-shrink: 0;
+  border: 1px solid var(--accent-primary);
+  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
 }
 
 .contact-detail h4 {
-  font-size: 0.9rem;
+  font-family: var(--font-tactical);
+  font-size: 0.95rem;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: 1px;
   margin-bottom: 2px;
 }
 
@@ -942,71 +1039,76 @@ button {
 .social-links-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 14px;
   margin-top: 10px;
 }
 
 .social-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 16px;
+  gap: 12px;
+  padding: 12px 18px;
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
   color: var(--text-main);
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-family: var(--font-tactical);
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 1px;
   transition: var(--transition-fast);
+  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
 }
 
 .social-btn:hover {
   border-color: var(--accent-primary);
   color: var(--accent-primary);
+  box-shadow: 0 0 15px rgba(255, 70, 85, 0.4);
   transform: translateY(-2px);
 }
 
 /* Direct Message Form */
 .contact-form-card {
-  background: var(--bg-secondary);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 36px;
+  padding: 38px;
+  clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .form-label {
   display: block;
-  font-size: 0.88rem;
-  font-weight: 600;
+  font-family: var(--font-tactical);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
   color: var(--text-main);
   margin-bottom: 8px;
 }
 
 .form-input, .form-textarea {
   width: 100%;
-  padding: 12px 16px;
+  padding: 14px 18px;
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
   color: var(--text-main);
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   transition: var(--transition-fast);
+  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
 }
 
 .form-input:focus, .form-textarea:focus {
   outline: none;
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px var(--accent-glow);
+  box-shadow: 0 0 15px rgba(255, 70, 85, 0.4);
 }
 
 .form-textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 130px;
 }
 
 /* ==========================================================================
@@ -1014,11 +1116,13 @@ button {
    ========================================================================== */
 .footer {
   background: var(--bg-secondary);
-  border-top: 1px solid var(--border-color);
-  padding: 30px 0;
+  border-top: 2px solid var(--accent-primary);
+  padding: 34px 0;
   text-align: center;
+  font-family: var(--font-tactical);
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
 }
 
 /* ==========================================================================
@@ -1028,8 +1132,8 @@ button {
   position: fixed;
   inset: 0;
   z-index: 2000;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(8px);
+  background: rgba(15, 25, 35, 0.92);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1046,15 +1150,15 @@ button {
 
 .modal-container {
   position: relative;
-  max-width: 850px;
+  max-width: 880px;
   width: 100%;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 20px;
-  box-shadow: var(--shadow-md);
+  background: var(--bg-card);
+  border: 2px solid var(--accent-primary);
+  padding: 24px;
+  box-shadow: 0 0 40px rgba(255, 70, 85, 0.5);
   transform: scale(0.9);
   transition: transform 0.3s ease;
+  clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
 }
 
 .modal-overlay.active .modal-container {
@@ -1065,42 +1169,49 @@ button {
   position: absolute;
   top: -16px;
   right: -16px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: var(--accent-primary);
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 0 20px rgba(255, 70, 85, 0.7);
   border: none;
   cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  transform: scale(1.1) rotate(90deg);
 }
 
 .modal-img-wrapper {
   width: 100%;
-  max-height: 70vh;
+  max-height: 72vh;
   overflow: hidden;
-  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--bg-primary);
+  border: 1px solid rgba(255, 70, 85, 0.2);
 }
 
 .modal-img-wrapper img {
   max-width: 100%;
-  max-height: 70vh;
+  max-height: 72vh;
   object-fit: contain;
 }
 
 .modal-caption {
   text-align: center;
-  margin-top: 14px;
-  font-size: 1.1rem;
-  font-weight: 700;
+  margin-top: 16px;
+  font-family: var(--font-tactical);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 1px;
   color: var(--text-main);
 }
 
@@ -1111,7 +1222,7 @@ button {
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 30px;
+    gap: 34px;
   }
 
   .hero-text {
@@ -1140,7 +1251,7 @@ button {
 
   .timeline-item {
     width: 100%;
-    padding-left: 50px;
+    padding-left: 54px;
     padding-right: 0;
     text-align: left !important;
   }
@@ -1157,15 +1268,15 @@ button {
 
 @media (max-width: 768px) {
   .section {
-    padding: 60px 0;
+    padding: 70px 0;
   }
 
   .hero-name {
-    font-size: 2.35rem;
+    font-size: 2.8rem;
   }
 
   .section-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   /* Mobile Nav Bar */
@@ -1178,11 +1289,12 @@ button {
     top: 76px;
     left: 0;
     right: 0;
-    background: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    border-bottom: 2px solid var(--accent-primary);
     flex-direction: column;
-    padding: 24px;
-    gap: 20px;
+    padding: 28px;
+    gap: 22px;
     transform: translateY(-150%);
     opacity: 0;
     transition: var(--transition-normal);
@@ -1191,7 +1303,7 @@ button {
   .nav-links.active {
     transform: translateY(0);
     opacity: 1;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
   }
 
   .stats-grid {
