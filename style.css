@@ -906,10 +906,12 @@ button {
   clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
 }
 
-.cert-card:hover {
+.cert-card:hover,
+.cert-card:focus-visible {
   border-color: var(--accent-primary);
   transform: translateY(-4px);
   box-shadow: 0 0 25px rgba(255, 70, 85, 0.4);
+  outline: none;
 }
 
 .cert-img-container {
